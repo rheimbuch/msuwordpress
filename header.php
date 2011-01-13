@@ -5,11 +5,24 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/screen.css"  media="screen" />
+  <link rel="stylesheet" type="text/css" href="<? bloginfo('stylesheet_url')?>" media="screen" />
   <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/ie6screen.css"  media="screen" />
   <![endif]-->
   <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/mobile.css" media="handheld, only screen and (max-device-width: 480px)" />
   <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/print.css" media="print" />   
+  <script src="http://www.montana.edu/msucommon/scriptsv2/jquery1.4.1.js" type="text/javascript"></script>
+
+  <? if(false) { ?>
+    <script src="http://www.montana.edu/msucommon/scriptsv2/navflyout.js" type="text/javascript"></script> 
+    <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/navflyout.css" media="screen" />
+  <? }; ?>
+  
+    <script src="http://montana.edu/msucommon/scriptsv2/navtoggle.js" type="text/javascript"></script>
+    <script src="<? bloginfo('template_url')?>/js/wordpress-navtoggle.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/navtoggle.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<? bloginfo('template_url')?>/css/navtoggle.css" media="screen" />
+ 
   <link rel="icon" type="image/icon" href="http://montana.edu/favicon.ico" />
   <? switch(get_option('sidebar')){
       case "200":
@@ -22,7 +35,6 @@
         break;
   } ?>
   <title><? pageTitle() ?></title>
-  <link rel="stylesheet" type="text/css" href="<? bloginfo('stylesheet_url')?>" media="screen" />
   <? wp_head() ?>
 </head>
 
@@ -67,8 +79,14 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 <!--END BREADCRUMB NAVIGATION-->  		
         <div id="left">
           <div class="links">
-            <h2><? bloginfo('title') ?></h2>
-            <? wp_page_menu(array('show_home' => true)) ?>                        
+            <h2><a href="<? bloginfo('url') ?>"><? bloginfo('title') ?></a></h2>
+            <?php wp_nav_menu( array( 'menu'=>'left_hand_side',
+                                      'sort_column' => 'menu_order', 
+                                      'container_class' => 'menu-header',
+                                      'depth' => 3,
+                                      'menu_class' => 'exnav',
+                                      'fallback_cb' => 'msu_default_nav'
+                                      ) ); ?>
           </div>
           <div id="contact">
             <h2><?php _e(htmlspecialchars(get_option('college-title')),'msu-template') ?></h2>

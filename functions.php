@@ -1,5 +1,7 @@
 <?php
 
+  register_nav_menu( 'left_hand_side', 'MSU Primary Navigation' );
+
 if ( function_exists('register_sidebar') ) {
   register_sidebar(array(
     'name' => 'Pages',
@@ -17,6 +19,13 @@ if ( function_exists('register_sidebar') ) {
   ));
 }
 
+
+function msu_default_nav() {
+  echo "<ul class='exnav'>";
+  wp_list_pages(array('depth' => '3',
+                      'title_li' => ''));
+  echo "</ul>";
+}
 
 function msu_template_setup_admin() {
   add_menu_page('MSU Template Setup', 'MSU Template', 8, __FILE__, 'msu_template_admin','http://montana.edu/favicon.ico');

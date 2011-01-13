@@ -68,48 +68,12 @@ li.page_item {
   display: block;
   margin: 0 auto;
 }
-
-/* the outermost list item; contains whole list */
-.pagenav {
-} 
-
-/* any Page item */
-.page_item {
-  list-style-type: none;
-} 
-
-/* the current Page */
-.current_page_item {
-} 
-
-/* parent of the current Page */
-.current_page_parent {
-}
-
- /* any ancestor of the current Page */
-.current_page_ancestor {
-} 
-
-.links  li ul,
-.links .current_page_item ul ul,
-.links .current_page_ancestor ul ul,
-.links .current_page_ancestor .current_page_item ul ul,
-.links .current_page_ancestor .current_page_ancestor ul ul {
-  display: block;
-  margin-left: 10px;
-}
-
-.links .current_page_item ul,
-.links .current_page_ancestor ul,
-.links .current_page_ancestor .current_page_item ul,
-.links .current_page_ancestor .current_page_ancestor ul,
-.links .current_page_ancestor .current_page_ancestor .current_page_item ul,
-.links .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {
-  display: block;
-  margin-left: 10px;
-}
-.links h2 a {
-  color: #003F7F;
+li.current_page_item > a{
   font-weight: bold;
-  font-size: 13px;
+}
+ul.children {
+  margin-left: 10px;
+}
+ul.sub-menu {
+  margin-left: 10px;
 }
