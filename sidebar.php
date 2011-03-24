@@ -5,7 +5,7 @@
   <!--              -->
   <?php 
   // If you are on a page, echo the page tab title, if on the blog echo the blog's
-  echo htmlspecialchars(get_option(((is_page())?'page':'blog').'-tab-title')) 
+    echo htmlspecialchars(get_option(((is_page())?'page':'blog').'-tab-title')) 
   ?>
   </a></span><span id="tab2"><a id="element2" style="cursor: pointer;" onmousedown="showPanel1();">
   Information

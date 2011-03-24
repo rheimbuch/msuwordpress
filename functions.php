@@ -22,7 +22,7 @@ if ( function_exists('register_sidebar') ) {
 
 function msu_default_nav() {
   echo "<ul class='exnav'>";
-  wp_list_pages(array('depth' => '3',
+  wp_list_pages(array('depth' => '2',
                       'title_li' => ''));
   echo "</ul>";
 }

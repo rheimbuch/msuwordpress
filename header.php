@@ -13,13 +13,14 @@
   <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/print.css" media="print" />   
   <script src="http://www.montana.edu/msucommon/scriptsv2/jquery1.4.1.js" type="text/javascript"></script>
 
-  <? if(false) { ?>
     <script src="http://www.montana.edu/msucommon/scriptsv2/navflyout.js" type="text/javascript"></script> 
     <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/navflyout.css" media="screen" />
-  <? }; ?>
   
+  <? if(false) { ?>
     <script src="http://montana.edu/msucommon/scriptsv2/navtoggle.js" type="text/javascript"></script>
     <script src="<? bloginfo('template_url')?>/js/wordpress-navtoggle.js" type="text/javascript"></script>
+  <? }; ?>
+
     <link rel="stylesheet" type="text/css" href="http://www.montana.edu/msucommon/stylesv2/navtoggle.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="<? bloginfo('template_url')?>/css/navtoggle.css" media="screen" />
  
@@ -83,7 +84,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
             <?php wp_nav_menu( array( 'menu'=>'left_hand_side',
                                       'sort_column' => 'menu_order', 
                                       'container_class' => 'menu-header',
-                                      'depth' => 3,
+                                      'depth' => 2,
                                       'menu_class' => 'exnav',
                                       'fallback_cb' => 'msu_default_nav'
                                       ) ); ?>
