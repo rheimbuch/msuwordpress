@@ -9,10 +9,6 @@
       </div>
     </div>
 
-    <? if(comments_open()){
-        comments_template();
-    } ?>
-
 <?php endwhile; endif; ?>
 
 <? get_footer() ?>
