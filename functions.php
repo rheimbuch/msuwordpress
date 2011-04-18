@@ -202,7 +202,6 @@ function msu_template_admin() {
 	<p class="submit">
 	<input type="submit" name="Submit" value="<?php _e('Save Changes', 'msu-template') ?>" />
 	</p>
-	
 	</form>
 	</div>
 	<?php
@@ -244,17 +243,18 @@ function breadcrumbs() {
 }
 
 function pageTitle() {
-       if (is_home()) { echo bloginfo('name');
+       if (is_front_page()) {
+           echo wp_title('');
        } elseif (is_404()) {
-       echo '404 Not Found' . " - " . get_bloginfo('name');
+           echo '404 Not Found' . " - " . get_bloginfo('name');
        } elseif (is_category()) {
-       echo 'Category:'; wp_title('') . " - " . get_bloginfo('name');
+           echo 'Category:'; wp_title('') . " - " . get_bloginfo('name');
        } elseif (is_search()) {
-       echo 'Search Results' . " - " . get_bloginfo('name');
+           echo 'Search Results' . " - " . get_bloginfo('name');
        } elseif ( is_day() || is_month() || is_year() ) {
-       echo 'Archives:'; wp_title('') . " - " . get_bloginfo('name');
+           echo 'Archives:'; wp_title('') . " - " . get_bloginfo('name');
        } else {
-       echo wp_title('') . " - " . get_bloginfo('name');
+           echo wp_title('') . " - " . get_bloginfo('name');
        }
 }
 
