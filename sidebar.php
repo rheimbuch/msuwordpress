@@ -29,7 +29,7 @@
   <div class="panel" id="panel1">
     <div class="widgetcontentarea">
       <div class="widgetelement" style="border: 0px">
-      <?php echo htmlspecialchars(get_option('information-text')) ?>
+      <?php echo get_option('information-text')) ?>
       </div>
       <br clear="all" />
     </div>
