@@ -244,7 +244,7 @@ function breadcrumbs() {
 
 function pageTitle() {
        if (is_front_page()) {
-           echo wp_title('');
+           echo get_bloginfo('name');
        } elseif (is_404()) {
            echo '404 Not Found' . " - " . get_bloginfo('name');
        } elseif (is_category()) {
